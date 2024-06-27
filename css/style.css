@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #c7c6c6;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+        "D D J K"
+        "JE P P K";
+    gap: 1rem;
+    width: 100%;
+    max-width: 1200px;
+    padding: 1rem;
+}
+
+.box {
+    background-color: aquamarine;
+    border-radius: 10px;
+    padding: 1.5rem;
+    position: relative;
+}
+
+.box.one {
+    background-color: hsl(263, 55%, 52%);
+    grid-area: D;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.box.two {
+    background-color: hsl(217, 19%, 35%);
+    grid-area: J;
+}
+
+.box.three {
+    background-color: hsl(0, 0%, 100%);
+    grid-area: K;
+    color: black;
+}
+
+.box.four {
+    background-color: hsl(0, 0%, 100%);
+    grid-area: JE;
+    color: black;
+}
+
+.box.five {
+    background-color: hsl(219, 29%, 14%);
+    grid-area: P;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.profile img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.profile-text {
+    display: flex;
+    flex-direction: column;
+}
+
+#quotation {
+    position: absolute;
+    top: -1.5em;
+    right: 10px;
+    min-width: 120px;
+    min-height: 130px;
+    border-radius: 0;
+    z-index: -1;
+}
+
+h2 {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.subtext {
+    font-size: 0.9em;
+    opacity: 0.8;
+    margin-top: 2px;
+}
+
+p {
+    margin: 15px 0 0 0;
+    line-height: 1.5;
+}
+
+.sec-paragraph{
+    opacity: 0.8;
+}
+
+.jo-1{
+    color: white;
+}
+
+.jo-2{
+    color: #f0f0f0;
+    opacity: 0.8;
+}
+
+.kira-2{
+    opacity: 0.8;
+}
+
+.pat-1{
+    color: white;
+}
+
+.pat-2{
+    color: #f0f0f0;
+    opacity: 0.8;
+}
+
+.je-2{
+    opacity: 0.8;
+}
+
+.jo{
+    color: white;
+}
+
+.jo-subtext{
+    color: white;
+    margin-top: 2px;
+}
+
+.pat{
+    color: white;
+}
+
+.pat-subtext{
+    color: white;
+    margin-top: 2px;
+}
+
+@media screen and (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+            "P K"
+            "JE J"
+            "D D";
+    }
+
+    .box {
+        grid-column: span 1; 
+    }
+}
+
+@media screen and (max-width: 764px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "D"
+            "J"
+            "K"
+            "JE"
+            "P";
+    }
+
+    .box {
+        grid-column: span 1; 
+    }
+}
